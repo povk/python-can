@@ -30,7 +30,6 @@ extras_require = {
 
 tests_require = [
     'mock~=2.0',
-    'nose~=1.3',
     'pytest~=3.6',
     'pytest-timeout~=1.2',
     'pytest-cov~=2.5',
@@ -40,6 +39,7 @@ tests_require = [
 ] + extras_require['serial']
 
 extras_require['test'] = tests_require
+
 
 
 setup(
@@ -104,8 +104,7 @@ setup(
         'windows-curses;platform_system=="Windows"',
     ],
     extras_require=extras_require,
-
     # Testing
-    test_suite="nose.collector",
+    setup_requires=['pytest-runner'],
     tests_require=tests_require,
 )
