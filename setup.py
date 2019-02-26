@@ -30,7 +30,6 @@ extras_require = {
 
 tests_require = [
     'mock~=2.0',
-    'nose~=1.3',
     'pytest~=3.6',
     'pytest-timeout~=1.2',
     'pytest-cov~=2.5',
@@ -99,14 +98,12 @@ setup(
     # Installation
     # see https://www.python.org/dev/peps/pep-0345/#version-specifiers
     python_requires=">=2.7,!=3.0,!=3.1,!=3.2,!=3.3",
+    setup_requires=["pytest-runner"],
     install_requires=[
         'wrapt~=1.10',
         'typing;python_version<"3.5"',
         'windows-curses;platform_system=="Windows"',
     ],
     extras_require=extras_require,
-
-    # Testing
-    test_suite="nose.collector",
     tests_require=tests_require,
 )
